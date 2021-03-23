@@ -4,7 +4,7 @@ const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
-const questions = [];
+// const questions = [];
 
 // Followed example in class
 inquirer
@@ -12,22 +12,30 @@ inquirer
     {
       type: 'input',  
       message: 'What is the project Title?',
-      name: 'title'
+      name: 'title',
+      validate: (input) =>
+        input ? input = " " : console.log("Please enter a valid title")
     },
     {
         type: 'input',  
         message: 'Enter a description of your project: ',
-        name: 'description'  
+        name: 'description',  
+        validate: (input) =>
+        input ? input = " " : console.log("Please enter a valid description")
     },
     {
         type: 'input',  
         message: 'Enter installation instructions: ',
-        name: 'install'  
+        name: 'install',
+        validate: (input) =>
+        input ? input = " " : console.log("Please enter valid installation instructions")
     },
     {
         type: 'input',  
         message: 'Enter usage information:',
-        name: 'usage'  
+        name: 'usage',
+        validate: (input) =>
+        input ? input = " " : console.log("Please enter valid usage info")  
     },
     {
         type: 'checkbox',  
@@ -38,22 +46,30 @@ inquirer
     {
         type: 'input',  
         message: 'Enter all contributor information:',
-        name: 'contributions'  
+        name: 'contributions',
+        validate: (input) =>
+        input ? input = " " : console.log("Please enter at least your name")
     },
     {
         type: 'input',  
         message: 'Enter test instructions:',
-        name: 'test'  
+        name: 'test',
+        validate: (input) =>
+        input ? input = " " : console.log("Please enter valid test insctructions")
     },
     {
         type: 'input',  
         message: 'Enter your GitHub username:',
-        name: 'questions1'  
+        name: 'questions1',
+        validate: (input) =>
+        input ? input = " " : console.log("Please enter a username") 
     },
     {
         type: 'input',  
         message: 'Enter your email address:',
-        name: 'questions2'  
+        name: 'questions2',
+        validate: (input) =>
+        input ? input = " " : console.log("Please enter an email address") 
     }
   ])
   .then((data) => {
