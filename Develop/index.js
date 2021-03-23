@@ -1,9 +1,12 @@
 // TODO: Include packages needed for this application DONE
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
 const questions = [];
+
+// Followed example in class
 inquirer
   .prompt([
     {
@@ -52,12 +55,22 @@ inquirer
         name: 'questions2'  
     },
   ])
+  .then((data) => {
+    // Making a variable that calls the README content
+    const rmTemplate = generateMarkdown(data);
+    console.log(data);
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+    // This creates the new README file (arg1: file name, 
+    // arg2 data used to "fill" file, arg3 is if error).
+    // Looked to class example rather than using given code.
+    fs.writeFile('ReadMe.md', rmTemplate, (err) =>
+      err ? console.log(err) : console.log('Success!')
+    );
+  });
+
 
 // TODO: Create a function to initialize app
-function init() {}
+// function init() {}
 
 // Function call to initialize app
-init();
+// init();
