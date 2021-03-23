@@ -2,11 +2,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown');
-
-const mit    = "Licensed under the [MIT License](https://spdx.org/licenses/MIT.html).";
-const gnu    = "Licensed under the [GNU GPLv3 License](https://spdx.org/licenses/GPL-3.0-or-later.html).";
-const isc    = "Licensed under the [ISC License](https://spdx.org/licenses/ISC.html).";
-const apache = "Licensed under the [Apache License](https://spdx.org/licenses/Apache-2.0.html).";
+const axios = require('axios');
 
 // Followed example in class
 inquirer
@@ -62,17 +58,7 @@ inquirer
         name: 'license',
         choices: ['MIT', 'GNU GPLv3', 'ISC', 'Apache', 'None'],
         validate: function (license) {
-            if(license === "MIT"){
-                license = mit;
-            } else if(license === "GNU GPLv3"){
-                license = gnu;
-            } else if(license === "ISC"){
-                license = isc;
-            } else if(license === "Apache"){
-                license = apache;
-            } else {
-                license = "This project is currently not licensed."
-            }
+            renderLicenseBadge(license);
             return true;
             },
     },
@@ -140,3 +126,4 @@ inquirer
 
 // Function call to initialize app
 // init();
+
