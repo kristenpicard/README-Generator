@@ -134,7 +134,7 @@ inquirer
     );
   });
 
-
+//GIVEN BY BOOTCAMP
 // TODO: Create a function to initialize app
 // function init() {}
 
