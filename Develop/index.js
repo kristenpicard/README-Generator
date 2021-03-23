@@ -13,29 +13,45 @@ inquirer
       type: 'input',  
       message: 'What is the project Title?',
       name: 'title',
-      validate: (input) =>
-        input ? input = " " : console.log("Please enter a valid title")
+      validate: function (input) {
+        if (input == " ") {
+            console.log("Please enter a valid title");
+        };
+        return true;
+        },
     },
     {
         type: 'input',  
         message: 'Enter a description of your project: ',
         name: 'description',  
-        validate: (input) =>
-        input ? input = " " : console.log("Please enter a valid description")
+        validate: function (input) {
+            if (input == " ") {
+                console.log("Please enter a valid description");
+            };
+            return true;
+            },
     },
     {
         type: 'input',  
         message: 'Enter installation instructions: ',
         name: 'install',
-        validate: (input) =>
-        input ? input = " " : console.log("Please enter valid installation instructions")
+        validate: function (input) {
+            if (input == " ") {
+                console.log("Please enter valid install instructions");
+            };
+            return true;
+            },
     },
     {
         type: 'input',  
         message: 'Enter usage information:',
         name: 'usage',
-        validate: (input) =>
-        input ? input = " " : console.log("Please enter valid usage info")  
+        validate: function (input) {
+            if (input == " ") {
+                console.log("Please enter valid usage info");
+            };
+            return true;
+            },
     },
     {
         type: 'checkbox',  
@@ -47,29 +63,45 @@ inquirer
         type: 'input',  
         message: 'Enter all contributor information:',
         name: 'contributions',
-        validate: (input) =>
-        input ? input = " " : console.log("Please enter at least your name")
+        validate: function (input) {
+            if (input == " ") {
+                console.log("Please enter at least your name");
+            };
+            return true;
+            },
     },
     {
         type: 'input',  
         message: 'Enter test instructions:',
         name: 'test',
-        validate: (input) =>
-        input ? input = " " : console.log("Please enter valid test insctructions")
+        validate: function (input) {
+            if (input == " ") {
+                console.log("Please enter valid test instructions");
+            };
+            return true;
+            },
     },
     {
         type: 'input',  
         message: 'Enter your GitHub username:',
         name: 'questions1',
-        validate: (input) =>
-        input ? input = " " : console.log("Please enter a username") 
+        validate: function (input) {
+            if (input == " ") {
+                console.log("Please enter a username");
+            };
+            return true;
+            },
     },
     {
         type: 'input',  
         message: 'Enter your email address:',
         name: 'questions2',
-        validate: (input) =>
-        input ? input = " " : console.log("Please enter an email address") 
+        validate: function (input) {
+            if (input == " ") {
+                console.log("Please enter an email address");
+            };
+            return true;
+            },
     }
   ])
   .then((data) => {
