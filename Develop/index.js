@@ -32,7 +32,8 @@ inquirer
     {
         type: 'checkbox',  
         message: 'Choose which license type applies:',
-        name: 'license'  
+        name: 'license',
+        choices: ['MIT', 'GNU GPLv3', 'ISC', 'Apache', 'None'],
     },
     {
         type: 'input',  
@@ -53,7 +54,7 @@ inquirer
         type: 'input',  
         message: 'Enter your email address:',
         name: 'questions2'  
-    },
+    }
   ])
   .then((data) => {
     // Making a variable that calls the README content
