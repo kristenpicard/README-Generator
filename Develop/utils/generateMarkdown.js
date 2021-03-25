@@ -8,18 +8,9 @@ const apache = "[License](https://img.shields.io/badge/License-Apache%202.0-blue
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-  if (license === "MIT") {
-    license = mit;
-  } else if (license === "GNU GPLv3") {
-    license = gnu;
-  } else if (license === "ISC") {
-    license = isc;
-  } else if (license === "Apache") {
-    license = apache;
-  } else {
-    license = "This project is currently not licensed."
-  }
-  return true;
+  
+  return `![License: ${license}](https://img.shields.io/badge/License-${license}-blue.svg)`;
+
 };
 
 // TODO: Create a function that returns the license link
@@ -58,7 +49,7 @@ function generateMarkdown(data) {
   ${data.usage}
   
   ## License
-  ${data.license}
+  ${renderLicenseBadge(data.license)}
   
   ## Contributions
   ${data.contributions}

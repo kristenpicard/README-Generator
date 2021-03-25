@@ -57,8 +57,7 @@ inquirer
         message: 'Choose which license type applies:',
         name: 'license',
         choices: ['MIT', 'GNU GPLv3', 'ISC', 'Apache', 'None'],
-        validate: function (license) {
-            renderLicenseBadge(license);
+        validate: function () {
             return true;
             },
     },
