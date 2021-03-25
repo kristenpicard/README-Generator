@@ -2,7 +2,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const generateMarkdown = require("./utils/generateMarkdown");
-const axios = require("axios");
 
 // Uses inquirer to prompt the user with quetions
 inquirer
@@ -108,7 +107,6 @@ inquirer
 
     // This creates the new README file (arg1: file name,
     // arg2 data used to "fill" file, arg3 is if error).
-    // Looked to class example rather than using given code.
     fs.writeFile("ReadMe.md", rmTemplate, (err) =>
       err ? console.log(err) : console.log("Success!")
     );
