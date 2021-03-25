@@ -4,7 +4,7 @@ const fs = require("fs");
 const generateMarkdown = require("./utils/generateMarkdown");
 const axios = require("axios");
 
-// Followed example in class
+// Uses inquirer to prompt the user with quetions
 inquirer
   .prompt([
     {
