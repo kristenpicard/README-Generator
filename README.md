@@ -49,7 +49,6 @@ https://github.com/kristenpicard
 ## Tests
 
 ![Demo:](1.gif)
-![Here is a demo of the application in use](/Demo_Video/README.md Generator.gif)
 
 [Click here to view a video that demonstrates the applications functionality](https://drive.google.com/file/d/1JfCjUB4fIN2Sn4vjQ2cKJ1zuZggXs2rM/view)
 
