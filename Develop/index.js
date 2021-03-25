@@ -52,14 +52,10 @@ inquirer
       },
     },
     {
-      // Way written now, writes actual words of choices
       type: "checkbox",
       message: "Choose which license type applies:",
       name: "license",
-      choices: ["MIT", "GNU GPLv3", "ISC", "Apache", "None"],
-      validate: function () {
-        return true;
-      },
+      choices: ["MIT", "GNU", "ISC", "Apache", "None"],
     },
     {
       type: "input",
@@ -109,7 +105,6 @@ inquirer
   .then((data) => {
     // Making a variable that calls the README content
     const rmTemplate = generateMarkdown(data);
-    console.log(data);
 
     // This creates the new README file (arg1: file name,
     // arg2 data used to "fill" file, arg3 is if error).
@@ -118,10 +113,3 @@ inquirer
       err ? console.log(err) : console.log("Success!")
     );
   });
-
-//GIVEN BY BOOTCAMP
-// TODO: Create a function to initialize app
-// function init() {}
-
-// Function call to initialize app
-// init();

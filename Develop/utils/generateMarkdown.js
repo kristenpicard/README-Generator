@@ -1,24 +1,36 @@
 // This function returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-  if (license == "None") {
-    return "";
+  if (license == "MIT") {
+    return `![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)`;
+  } else if (license == "GNU") {
+    return `![License: GNU](https://img.shields.io/badge/License-GPL%20v2-blue.svg)`;
+  } else if (license == "ISC") {
+    return `![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)`;
+  } else if (license == "Apache") {
+    return `![License: Apache](https://img.shields.io/badge/License-Apache%202.0-blue.svg)`;
   }
-  return `![License: ${license}](https://img.shields.io/badge/License-${license}-blue.svg)`;
+  return "";
 }
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-  if (license == "None") {
-    return "";
+  if (license == "MIT") {
+    return `[MIT License Link](https://spdx.org/licenses/MIT.html)`;
+  } else if (license == "GNU") {
+    return `[GNU License Link](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)`;
+  } else if (license == "ISC") {
+    return `[ISC License Link](https://opensource.org/licenses/ISC)`;
+  } else if (license == "Apache") {
+    return `[Apache 2.0 License Link](https://opensource.org/licenses/Apache-2.0)`;
   }
-  return `![License Link: ](https://opensource.org/licenses/${license})`;
+  return "";
 }
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+// function renderLicenseSection(license) {}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
@@ -45,6 +57,7 @@ function generateMarkdown(data) {
   
   ## License
   ${renderLicenseBadge(data.license)}
+
   ${renderLicenseLink(data.license)}
   
   ## Contributions
